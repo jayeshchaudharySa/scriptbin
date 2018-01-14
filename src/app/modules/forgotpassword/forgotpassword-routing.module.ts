@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ForgetpasswordComponent } from './forgetpassword.component';
+import { ForgotpasswordComponent } from './forgotpassword.component';
 
 const routes: Routes = [
-  {  path: '', component: ForgetpasswordComponent }
+  {  path: '', component: ForgotpasswordComponent }
 ];
 
 @NgModule({
@@ -11,4 +11,4 @@ const routes: Routes = [
   exports: [RouterModule],
   providers: []
 })
-export class ForgetpasswordRoutingModule { }
+export class ForgotpasswordRoutingModule { }

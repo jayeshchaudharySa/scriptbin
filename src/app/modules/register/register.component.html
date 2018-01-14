@@ -1,48 +1,46 @@
-<div class="login-page">
-  <div class="row">
-
-    <div class="col-md-4  push-md-4 login-logo-section">
-      <!--<a href="/"><img src="assets/img/logo.png" width="150px" class="img-responsive" /></a>-->
-      <div class="loginform-box box effect5">
-        <div class="login-header">
-          <h1>Register</h1>
-        </div>
-        <form role="form">
-          <div class="form-content">
-            <div class="form-group">
-              <input type="text" name="First Name" class="form-control input-underline input-lg" placeholder="First Name">
+<div class="app flex-row align-items-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card mx-4">
+            <div class="card-body p-4">
+              <h1>Register</h1>
+              <p class="text-muted">Create your account</p>
+              <div class="input-group mb-3">
+                <span class="input-group-addon"><i class="icon-user"></i></span>
+                <input type="text" class="form-control" placeholder="Username">
+              </div>
+  
+              <div class="input-group mb-3">
+                <span class="input-group-addon">@</span>
+                <input type="text" class="form-control" placeholder="Email">
+              </div>
+  
+              <div class="input-group mb-3">
+                <span class="input-group-addon"><i class="icon-lock"></i></span>
+                <input type="password" class="form-control" placeholder="Password">
+              </div>
+  
+              <div class="input-group mb-4">
+                <span class="input-group-addon"><i class="icon-lock"></i></span>
+                <input type="password" class="form-control" placeholder="Repeat password">
+              </div>
+  
+              <button type="button" class="btn btn-block btn-success" routerLink="/dashboard">Create Account</button>
             </div>
-            <div class="form-group">
-              <input type="text" name="Lats Name" class="form-control input-underline input-lg" placeholder="Last Name">
-            </div>
-            <div class="form-group">
-              <input type="text" name="email" class="form-control input-underline input-lg" placeholder="Email">
-            </div>
-            <div class="form-group">
-              <input type="text" name="password" class="form-control input-underline input-lg" placeholder="Create password">
-            </div>
-            <div class="form-group">
-              <input type="text" name="re password" class="form-control input-underline input-lg" placeholder="Reenter password">
-            </div>
-            <button type="button" class="btn rounded-btn btn-style" routerLink="/dashboard"> Log in </button>
-            <div class="form-group margin-bottom-no">
+            <!-- <div class="card-footer p-4">
               <div class="row">
-                <div class="col-md-6">
-                  <!-- <div class="mt-2 color-black">
-                                      <input type="checkbox">
-                                      Remember Me
-                                  </div> -->
-                  <div class="text-left forgot-password-wrapper">
-                    <button type="button" class="btn rounded-btnForgot" data-toggle="modal" routerLink="/login">Back </button>
-                  </div>
+                <div class="col-6">
+                  <button class="btn btn-block btn-facebook" type="button"><span>facebook</span></button>
+                </div>
+                <div class="col-6">
+                  <button class="btn btn-block btn-twitter" type="button"><span>twitter</span></button>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-<!-- /.modal -->
+  

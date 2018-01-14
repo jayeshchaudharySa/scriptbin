@@ -3,17 +3,17 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
-import { ForgetpasswordRoutingModule } from './forgetpassword-routing.module';
-import { ForgetpasswordComponent } from './forgetpassword.component';
+import { ForgotpasswordRoutingModule } from './forgotpassword-routing.module';
+import { ForgotpasswordComponent } from './forgotpassword.component';
 
 @NgModule({
   imports: [
     CommonModule,
     ModalModule.forRoot(),
-    ForgetpasswordRoutingModule
+    ForgotpasswordRoutingModule
   ],
-  declarations: [ForgetpasswordComponent]
+  declarations: [ForgotpasswordComponent]
 })
-export class ForgetpasswordModule {
+export class ForgotpasswordModule {
 
 }

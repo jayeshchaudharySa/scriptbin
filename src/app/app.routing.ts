@@ -16,8 +16,8 @@ export const routes: Routes = [
     path: 'register',
     loadChildren: './modules/register/register.module#RegisterModule',
   }, {
-    path: 'forgetPassword',
-    loadChildren: './modules/forgetpassword/forgetpassword.module#ForgetpasswordModule',
+    path: 'forgotPassword',
+    loadChildren: './modules/forgotpassword/forgotpassword.module#ForgotpasswordModule',
   }, {
     path: '',
     redirectTo: 'dashboard',
@@ -49,7 +49,7 @@ export const routes: Routes = [
       {
         path: 'profile',
         loadChildren: './modules/profile/profile.module#ProfileModule'
-      },
+      }
     ]
   }
 ];
