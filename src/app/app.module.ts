@@ -17,6 +17,7 @@ import { AppRoutingModule } from './app.routing';
 
 // Layouts
 import { FullLayoutComponent } from './layouts/full-layout.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { FullLayoutComponent } from './layouts/full-layout.component';
     AppRoutingModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    ModalModule.forRoot()
   ],
   declarations: [
     AppComponent,
