@@ -7,11 +7,13 @@ import { ModalDirective } from 'ngx-bootstrap/modal';
 })
 export class UserComponent {
   @ViewChild('userModal') userModal: ModalDirective;
+  @ViewChild('userDetailModal') userDetailModal: ModalDirective;  
   title = "Add User";
   button = "Save"
   constructor() {
   }
-  openModel(user){
+  openModel(user,event){
+    event.stopPropagation();
     this.userModal.show();
     if(user){
       this.title = "Update User";

@@ -8,12 +8,14 @@ import { ModalDirective } from 'ngx-bootstrap/modal';
 })
 export class AuthorComponent implements OnInit {
   @ViewChild('authorModal') authorModal: ModalDirective;
+  @ViewChild('authorDetailModal') authorDetailModal: ModalDirective;  
   title = "Add Author";
   button = "Save"
   constructor() {
   }
   openModel(Author) {
     this.authorModal.show();
+    this.authorDetailModal.hide();
     if (Author) {
       this.title = "Update Author";
       this.button = "Update";

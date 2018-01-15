@@ -8,7 +8,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
   imports: [
     CommonModule,
     UserRoutingModule,
-    ModalModule    
+    ModalModule   
   ],
   declarations: [UserComponent]
 })

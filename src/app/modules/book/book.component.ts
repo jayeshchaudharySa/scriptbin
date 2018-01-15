@@ -19,7 +19,7 @@ export class BookComponent implements OnInit {
       this.title = "Update Book";
       this.button = "Update";
     } else {
-      this.title = "Add Author";
+      this.title = "Add Book";
       this.button = "Save";
     }
   }

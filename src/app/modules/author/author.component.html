@@ -14,16 +14,16 @@
         </div>
         <div class="col-md-2">
           <button class="btn btn-info float-right" (click)="openModel('')">
-            <i class="fa fa-plus"></i>Add New</button>
+            <i class="fa fa-plus mr-10"></i>Add New</button>
         </div>
       </div>
       <table class="table col-md-12 table-bordered table-striped table-condensed">
         <thead>
           <tr>
             <th class="text-center">SR NO</th>
-            <th class="text-center">Author Name</th>
+            <th class="text-center">Full Name</th>
+            <th class="text-center">Author Image</th>
             <th class="text-center">Email</th>
-            <th class="text-center">Total Books</th>
             <th class="text-center">Status</th>
             <th class="text-center">Action</th>
           </tr>
@@ -31,46 +31,59 @@
         <tbody>
           <tr class="text-center">
             <td>1</td>
-            <td>make</td>
-            <td>make@email.com</td>
-            <td>5</td>
-            <td>ACTIVE</td>
+            <td>make john</td>
             <td>
-              <button class="btn btn-primary" (click)="openModel('author')">
-                <i class="fa fa-pencil pr-10"></i>Edit</button>
+              <img src="https://scienceandsociety.duke.edu/wordpress/wp-content/uploads/profile-list-ben-100x100.jpg" class="img-avatar el-h50"
+                alt="User image">
+            </td>
+            <td>make@email.com</td>
+            <td>
+              <select class="form-control" id="status">
+                <option>Active</option>
+                <option>Inactive</option>
+              </select>
+            </td>
+            <td>
+              <button class="btn btn-primary" (click)="openModel('user')">Edit</button>
+              <button type="button" class="btn btn-primary" (click)="authorDetailModal.show()">Detail</button>
             </td>
           </tr>
           <tr class="text-center">
-            <td>2</td>
-            <td>make</td>
-            <td>make@email.com</td>
-            <td>10</td>
-            <td>ACTIVE</td>
+            <td>1</td>
+            <td>make john</td>
             <td>
-              <button class="btn btn-primary" (click)="openModel('author')">
-                <i class="fa fa-pencil pr-10"></i>Edit</button>
+              <img src="https://scienceandsociety.duke.edu/wordpress/wp-content/uploads/profile-list-ben-100x100.jpg" class="img-avatar el-h50"
+                alt="User image">
+            </td>
+            <td>make@email.com</td>
+            <td>
+              <select class="form-control" id="status">
+                <option>Active</option>
+                <option>Inactive</option>
+              </select>
+            </td>
+            <td>
+              <button class="btn btn-primary" (click)="openModel('author')">Edit</button>
+              <button type="button" class="btn btn-primary" (click)="authorDetailModal.show()">Detail</button>
             </td>
           </tr>
           <tr class="text-center">
-            <td>3</td>
-            <td>make</td>
-            <td>make@email.com</td>
-            <td>2</td>
-            <td>ACTIVE</td>
+            <td>1</td>
+            <td>make john</td>
             <td>
-              <button class="btn btn-primary" (click)="openModel('author')">
-                <i class="fa fa-pencil pr-10"></i>Edit</button>
+              <img src="https://scienceandsociety.duke.edu/wordpress/wp-content/uploads/profile-list-ben-100x100.jpg" class="img-avatar el-h50"
+                alt="User image">
             </td>
-          </tr>
-          <tr class="text-center">
-            <td>4</td>
-            <td>make</td>
             <td>make@email.com</td>
-            <td>17</td>
-            <td>ACTIVE</td>
             <td>
-              <button class="btn btn-primary" (click)="openModel('author')">
-                <i class="fa fa-pencil pr-10"></i>Edit</button>
+              <select class="form-control" id="status">
+                <option>Active</option>
+                <option>Inactive</option>
+              </select>
+            </td>
+            <td>
+              <button class="btn btn-primary" (click)="openModel('user')">Edit</button>
+              <button type="button" class="btn btn-primary" (click)="authorDetailModal.show()">Detail</button>
             </td>
           </tr>
         </tbody>
@@ -94,20 +107,16 @@
             <div class="form-group">
               <form>
                 <div class="form-group">
-                  <label for="firstName">First Name</label>
-                  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter first name">
-                </div>
-                <div class="form-group">
-                  <label for="lastName">Last Name</label>
-                  <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Enter last name">
+                  <label for="fullName">Full Name</label>
+                  <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter first name">
                 </div>
                 <div class="form-group">
                   <label for="email">Email</label>
                   <input type="text" class="form-control" id="email" name="email" placeholder="Enter email">
                 </div>
                 <div class="form-group">
-                  <label for="totalBooks">Total Books</label>
-                  <input type="text" class="form-control" id="totalBooks" name="totalBooks" placeholder="Enter number of book">
+                  <label for="profileImage">Profile Image</label>
+                  <input type="file" class="form-control" accept="image/*" id="profileImage" name="profileImage" placeholder="Choose profile image">
                 </div>
               </form>
             </div>
@@ -120,3 +129,59 @@
     </div>
   </div>
 </div>
+
+<div bsModal #authorDetailModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-info" role="document">
+    <div class="modal-content">
+      <div class="modal-header card-header">
+        <h4 class="modal-title">Author detail</h4>
+        <button type="button" class="close" (click)="authorDetailModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row payment-body">
+          <div class="card-body">
+            <table class="table">
+              <tr>
+                <td>Author Id</td>
+                <td>: 2001</td>
+              </tr>
+              <tr>
+                <td>Full Name</td>
+                <td>: John Make</td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td>: johnmake@gmail.com</td>
+              </tr>
+              <tr>
+                <td>Mobile No</td>
+                <td>: 7777788888</td>
+              </tr>
+              <tr>
+                <td>Ifsc code</td>
+                <td>: SBI273RT</td>
+              </tr>
+              <tr>
+                <td>Bank Account No</td>
+                <td>: 017600003567</td>
+              </tr>
+              <tr>
+                <td>Uploaded Books</td>
+                <td>: 21 Books</td>
+              </tr>
+              <tr>
+                <td>Total selling</td>
+                <td>: 235450 RS</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="userModal.hide()">{{button}}</button>
+        </div> -->
+      </div>
+    </div>
+  </div>

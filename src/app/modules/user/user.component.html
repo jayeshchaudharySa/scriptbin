@@ -10,19 +10,19 @@
             <input type="text" class="form-control" placeholder="search by name" />
           </div>
         </div>
-        <div class="col-md-6">
+        <!-- <div class="col-md-6">
         </div>
         <div class="col-md-2">
           <button class="btn btn-info float-right" (click)="openModel('')">
-            <i class="fa fa-plus"></i>Add New</button>
-        </div>
+            <i class="fa fa-plus mr-10"></i>Add New</button>
+        </div> -->
       </div>
       <table class="table col-md-12 table-bordered table-striped table-condensed">
         <thead>
           <tr>
             <th class="text-center">SR NO</th>
-            <th class="text-center">First Name</th>
-            <th class="text-center">Last Name</th>
+            <th class="text-center">Full Name</th>
+            <th class="text-center">User Image</th>
             <th class="text-center">Email</th>
             <th class="text-center">Status</th>
             <th class="text-center">Action</th>
@@ -31,48 +31,61 @@
         <tbody>
           <tr class="text-center">
             <td>1</td>
-            <td>make</td>
-            <td>jhon</td>
-            <td>make@email.com</td>
-            <td>ACTIVE</td>
+            <td>make john</td>
             <td>
-              <button class="btn btn-primary" (click)="openModel('user')">
-                <i class="fa fa-pencil pr-10"></i>Edit</button>
+              <img src="https://scienceandsociety.duke.edu/wordpress/wp-content/uploads/profile-list-ben-100x100.jpg" class="img-avatar el-h50"
+                alt="User image">
+            </td>
+            <td>make@email.com</td>
+            <td>
+              <select class="form-control" id="status">
+                <option>Active</option>
+                <option>Inactive</option>
+              </select>
+            </td>
+            <td>
+              <button class="btn btn-primary" (click)="openModel('user')">Edit</button>
+              <button type="button" class="btn btn-primary" (click)="userDetailModal.show()">Detail</button>
             </td>
           </tr>
           <tr class="text-center">
-              <td>2</td>
-              <td>make</td>
-              <td>jhon</td>
-              <td>make@email.com</td>
-              <td>ACTIVE</td>
-              <td>
-                <button class="btn btn-primary" (click)="openModel('user')">
-                  <i class="fa fa-pencil pr-10"></i>Edit</button>
-              </td>
-            </tr>
-            <tr class="text-center">
-                <td>3</td>
-                <td>make</td>
-                <td>jhon</td>
-                <td>make@email.com</td>
-                <td>ACTIVE</td>
-                <td>
-                  <button class="btn btn-primary" (click)="openModel('user')">
-                    <i class="fa fa-pencil pr-10"></i>Edit</button>
-                </td>
-              </tr>
-              <tr class="text-center">
-                  <td>4</td>
-                  <td>make</td>
-                  <td>jhon</td>
-                  <td>make@email.com</td>
-                  <td>ACTIVE</td>
-                  <td>
-                    <button class="btn btn-primary" (click)="openModel('user')">
-                      <i class="fa fa-pencil pr-10"></i>Edit</button>
-                  </td>
-                </tr>
+            <td>1</td>
+            <td>make john</td>
+            <td>
+              <img src="https://scienceandsociety.duke.edu/wordpress/wp-content/uploads/profile-list-ben-100x100.jpg" class="img-avatar el-h50"
+                alt="User image">
+            </td>
+            <td>make@email.com</td>
+            <td>
+              <select class="form-control" id="status">
+                <option>Active</option>
+                <option>Inactive</option>
+              </select>
+            </td>
+            <td>
+              <button name="edit"class="btn btn-primary" (click)="openModel('user',$event)">Edit</button>
+              <button name="detail"type="button" class="btn btn-primary" (click)="userDetailModal.show()">Detail</button>
+            </td>
+          </tr>
+          <tr class="text-center">
+            <td>1</td>
+            <td>make john</td>
+            <td>
+              <img src="https://scienceandsociety.duke.edu/wordpress/wp-content/uploads/profile-list-ben-100x100.jpg" class="img-avatar el-h50"
+                alt="User image">
+            </td>
+            <td>make@email.com</td>
+            <td>
+              <select class="form-control" id="status">
+                <option>Active</option>
+                <option>Inactive</option>
+              </select>
+            </td>
+            <td>
+              <button class="btn btn-primary" (click)="openModel('user')">Edit</button>
+              <button type="button" class="btn btn-primary" (click)="userDetailModal.show()">Detail</button>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -116,6 +129,62 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" (click)="userModal.hide()">{{button}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div bsModal #userDetailModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-info" role="document">
+    <div class="modal-content">
+      <div class="modal-header card-header">
+        <h4 class="modal-title">User detail</h4>
+        <button type="button" class="close" (click)="userDetailModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row payment-body">
+          <div class="card-body">
+            <table class="table">
+              <tr>
+                <td>User Id</td>
+                <td>: 1002</td>
+              </tr>
+              <tr>
+                <td>Full Name</td>
+                <td>: John Make</td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td>: johnmake@gmail.com</td>
+              </tr>
+              <tr>
+                <td>Mobile No</td>
+                <td>: 7777788888</td>
+              </tr>
+              <tr>
+                <td>Ifsc code</td>
+                <td>: SBI273RT</td>
+              </tr>
+              <tr>
+                <td>Bank Account No</td>
+                <td>: 017600003567</td>
+              </tr>
+              <tr>
+                <td>Total purchase</td>
+                <td>: 17 Books</td>
+              </tr>
+              <tr>
+                <td>Total payment</td>
+                <td>: 2450 RS</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="userModal.hide()">{{button}}</button>
+      </div> -->
       </div>
     </div>
   </div>
